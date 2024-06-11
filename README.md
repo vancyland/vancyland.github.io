@@ -22,40 +22,36 @@ I have created a GitHub homepage where I will provide a brief introduction about
 
 进一步对timesteps进行消融，即对timestep<[1000,900,875]的情况下注入第一帧/平均帧信息到SA后得到
 
-
-
-<div align="center">
-  <div style="display: flex;">
-    <div style="flex: 30%; padding: 10px;">
-      <p align="center">第一帧</p>
+<table>
+  <tr>
+    <td align="center">
+      <p>1000</p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/076cf87d-a193-404b-bd2e-451ba48b2874" width="100%">
-    </div>
-    <div style="flex: 30%; padding: 10px;">
-      <p align="center">第一帧</p>
+    </td>
+    <td align="center">
+      <p>840</p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/a153ee1c-2688-442d-bad9-dd1645adcc7e" width="100%">
-    </div>
-    <div style="flex: 30%; padding: 10px;">
-      <p align="center">第一帧</p>
+    </td>
+    <td align="center">
+      <p>800</p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/e52309a8-4f7a-4f43-8132-e6cf1b3e3d62" width="100%">
-    </div>
-  </div>
-  <div style="display: flex;">
-    <div style="flex: 30%; padding: 10px;">
-      <p align="center">平均帧</p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <p></p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/7443ea6f-dfb0-404a-ac77-c71309415445" width="100%">
-    </div>
-    <div style="flex: 30%; padding: 10px;">
-      <p align="center">平均帧</p>
+    </td>
+    <td align="center">
+      <p>平均帧</p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/cfdac4a6-d039-49a5-9c19-6dcefb9b3c44" width="100%">
-    </div>
-    <div style="flex: 30%; padding: 10px;">
-      <p align="center">平均帧</p>
+    </td>
+    <td align="center">
+      <p>平均帧</p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/b3f4faa9-0ea3-43f7-b4c3-3c33ecf8df9a" width="100%">
-    </div>
-  </div>
-</div>
-
-
+    </td>
+  </tr>
+</table>
 
 
 
