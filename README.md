@@ -43,11 +43,11 @@ I have created a GitHub homepage where I will provide a brief introduction about
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/7443ea6f-dfb0-404a-ac77-c71309415445" width="100%">
     </td>
     <td align="center">
-      <p>平均帧</p>
+      <p></p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/cfdac4a6-d039-49a5-9c19-6dcefb9b3c44" width="100%">
     </td>
     <td align="center">
-      <p>平均帧</p>
+      <p></p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/b3f4faa9-0ea3-43f7-b4c3-3c33ecf8df9a" width="100%">
     </td>
   </tr>
