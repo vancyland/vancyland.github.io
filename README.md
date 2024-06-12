@@ -10,7 +10,7 @@ I have created a GitHub homepage where I will provide a brief introduction about
   <img src="https://github.com/users/vancyland/projects/1/assets/127710303/a2dca508-d084-4451-9e2a-b25d82344073" width="30%"/>
 </div>
 
-在所有timesteps加入SparseCausalAttention/第一帧/平均帧信息到所有upblock的SA后，分别变为
+在所有timesteps加入SparseCausalAttention/第一帧/平均帧信息到所有upblock的SA后，分别生成以下三个视频
 
 <div align="center">
   <img src="https://github.com/users/vancyland/projects/1/assets/127710303/d51b43b5-9a86-42e4-b971-f9f5e4415f54" width="30%"/>
@@ -20,20 +20,20 @@ I have created a GitHub homepage where I will provide a brief introduction about
 
 一致性确实提升，但是生成视频质量下降同时motion信息丢失。
 
-进一步对timesteps进行消融，即对timestep<[1000,900,875]的情况下注入第一帧/平均帧信息到SA后得到
+进一步对timesteps[1-25]进行消融，即对timestep>[0,4,5]的情况下注入第一帧/平均帧信息到SA后得到
 
 <table>
   <tr>
     <td align="center">
-      <p>1000</p>
+      <p>0</p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/076cf87d-a193-404b-bd2e-451ba48b2874" width="100%">
     </td>
     <td align="center">
-      <p>840</p>
+      <p>4</p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/a153ee1c-2688-442d-bad9-dd1645adcc7e" width="100%">
     </td>
     <td align="center">
-      <p>800</p>
+      <p>5</p>
       <img src="https://github.com/vancyland/vancyland.github.io/assets/127710303/e52309a8-4f7a-4f43-8132-e6cf1b3e3d62" width="100%">
     </td>
   </tr>
