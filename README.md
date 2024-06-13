@@ -10,15 +10,13 @@ I have created a GitHub homepage where I will provide a brief introduction about
   <img src="https://github.com/users/vancyland/projects/1/assets/127710303/a2dca508-d084-4451-9e2a-b25d82344073" width="30%"/>
 </div>
 
-在所有timesteps加入SparseCausalAttention/第一帧/平均帧信息到所有upblock的SA后，分别生成以下三个视频
+在所有timesteps加入SparseCausalAttention/第一帧/平均帧信息到所有upblock的SA后，分别生成以下三个视频.可以看出，一致性确实提升，但是生成视频质量下降，motion信息丢失。
 
 <div align="center">
   <img src="https://github.com/users/vancyland/projects/1/assets/127710303/d51b43b5-9a86-42e4-b971-f9f5e4415f54" width="30%"/>
   <img src="https://github.com/users/vancyland/projects/1/assets/127710303/4028b16c-117e-481d-aceb-7edb6722fd0e" width="30%"/>
   <img src="https://github.com/users/vancyland/projects/1/assets/127710303/1c5c79b0-bb3e-4547-a166-87edc57b260b" width="30%"/>
 </div>
-
-一致性确实提升，但是生成视频质量下降同时motion信息丢失。
 
 进一步对timesteps[1-25]进行消融，即对timestep>[0,4,5]的情况下注入第一帧/平均帧信息到SA后得到
 
