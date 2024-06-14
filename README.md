@@ -10,7 +10,7 @@ I have created a GitHub homepage where I will provide a brief introduction about
   <img src="https://github.com/users/vancyland/projects/1/assets/127710303/a2dca508-d084-4451-9e2a-b25d82344073" width="30%"/>
 </div>
 
-在所有timesteps加入SparseCausalAttention/第一帧/平均帧信息到所有upblock的SA后，分别生成以下三个视频.可以看出，一致性确实提升，但是生成视频质量下降，motion信息丢失。
+在所有timesteps加入SparseCausalAttention/第一帧/平均帧信息到所有upblock的SA后，分别生成以下三个视频.可以看出，一致性确实提升，但是生成视频质量下降，motion信息丢失?
 
 <div align="center">
   <img src="https://github.com/users/vancyland/projects/1/assets/127710303/d51b43b5-9a86-42e4-b971-f9f5e4415f54" width="30%"/>
