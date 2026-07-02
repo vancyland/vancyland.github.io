@@ -1,342 +1,540 @@
-
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0045)http://6.869.csail.mit.edu/fa19/schedule.html -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
-<style>
-    @import url('https://fonts.cdnfonts.com/css/chalkduster');
-</style>
-<script src="./sm/assets/teaser-data.js"></script>
-
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <meta name="description"
-        content="Project page for &#39;Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation.&#39;">
-    <link rel="icon" href="./pics/wis_logo.jpg">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cong Wan (万聪)</title>
+<meta name="description" content="Cong Wan (万聪) — M.S. student at Xi'an Jiaotong University, advised by Prof. Yihong Gong. Research on multimodal foundation models, world models, and embodied AI." />
+<link rel="icon" href="images/favicon.ico" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --accent:#2b5bb5;
+  --accent-soft:#eaf1fb;
+  --ink:#1a2230;
+  --muted:#5b6472;
+  --faint:#8a94a3;
+  --line:#e7eaef;
+  --bg:#ffffff;
+  --panel:#f7f8fa;
+  --radius:14px;
+  --maxw:940px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none;transition:color .15s ease;}
+a:hover{color:#1b3f85;}
+strong{font-weight:700;}
 
-    </style>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <meta name="description"
-        content="Project page for &#39;Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation.&#39;">
-    <link rel="icon" href="./sm/assets/wis_logo.jpeg">
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:99;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;gap:22px;
+  padding:14px 28px;
+}
+.nav-name{font-weight:800;font-size:1.02rem;letter-spacing:-.01em;color:var(--ink);margin-right:auto;}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap;}
+.nav-links a{
+  font-size:.9rem;font-weight:500;color:var(--muted);position:relative;
+}
+.nav-links a:hover{color:var(--accent);}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--accent);transition:width .2s ease;
+}
+.nav-links a:hover::after{width:100%;}
+
+/* ── WRAP ── */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:52px 28px 40px;}
+
+/* ── HERO ── */
+.hero{display:flex;gap:44px;align-items:center;}
+.hero-photo{flex-shrink:0;}
+.hero-photo img{
+  width:186px;height:232px;object-fit:cover;border-radius:16px;display:block;
+  box-shadow:0 12px 34px rgba(20,32,64,.16);
+}
+.hero-body{flex:1;min-width:0;}
+.hero-body h1{
+  font-family:'Newsreader',Georgia,serif;
+  font-size:2.6rem;font-weight:600;line-height:1.1;letter-spacing:-.015em;
+  margin-bottom:2px;
+}
+.hero-body .zh{font-size:1.35rem;color:var(--muted);font-weight:500;}
+.hero-tag{margin:12px 0 4px;font-size:1.02rem;color:var(--ink);font-weight:500;}
+.hero-aff{color:var(--muted);font-size:.98rem;line-height:1.5;}
+.hero-aff a{font-weight:500;}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.links a{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.9rem;font-weight:500;color:var(--ink);
+  border:1px solid var(--line);background:#fff;
+  padding:7px 14px;border-radius:999px;
+  box-shadow:0 1px 2px rgba(20,32,64,.04);
+}
+.links a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+.links svg{width:16px;height:16px;fill:currentColor;}
+
+/* ── SECTION ── */
+section{margin-top:52px;scroll-margin-top:80px;}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;margin-bottom:22px;
+}
+.sec-head h2{
+  font-family:'Newsreader',Georgia,serif;
+  font-size:1.6rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);
+}
+.sec-head::after{content:"";flex:1;height:1px;background:var(--line);}
+.lead{color:var(--muted);font-size:1.02rem;}
+.lead a{font-weight:500;}
+
+/* ── ABOUT ── */
+.about p{margin-bottom:14px;color:#2c3542;}
+.interests{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;
+}
+.interests span{
+  font-size:.86rem;font-weight:500;color:var(--accent);
+  background:var(--accent-soft);border:1px solid #d8e4f7;
+  padding:5px 12px;border-radius:999px;
+}
+
+/* ── NEWS ── */
+.news{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--panel);
+  max-height:230px;overflow-y:auto;padding:6px 20px;
+}
+.news-item{display:flex;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);}
+.news-item:last-child{border-bottom:none;}
+.news-date{
+  flex-shrink:0;width:88px;font-size:.82rem;font-weight:600;color:var(--accent);
+  font-variant-numeric:tabular-nums;padding-top:1px;
+}
+.news-text{font-size:.94rem;color:#2c3542;}
+.news::-webkit-scrollbar{width:8px;}
+.news::-webkit-scrollbar-thumb{background:#cfd6e0;border-radius:8px;}
+
+/* ── PUBLICATIONS ── */
+.pub{
+  display:flex;gap:20px;padding:18px;border-radius:var(--radius);
+  border:1px solid transparent;transition:background .15s ease,border-color .15s ease;
+}
+.pub:hover{background:var(--panel);}
+.pub.hl{background:#fffdf4;border-color:#f2e3b3;}
+.pub-thumb{flex-shrink:0;width:172px;display:flex;flex-direction:column;gap:8px;}
+.pub-thumb img{
+  width:172px;height:114px;object-fit:cover;border-radius:10px;
+  border:1px solid var(--line);background:#fff;display:block;
+  box-shadow:0 2px 8px rgba(20,32,64,.06);
+}
+.badge{
+  display:block;font-size:.74rem;font-weight:700;letter-spacing:.01em;
+  color:#fff;padding:5px 0;width:100%;border-radius:8px;line-height:1.15;text-align:center;
+}
+.badge small{display:inline;font-size:.68rem;font-weight:600;opacity:.9;margin-left:5px;}
+.ph{
+  width:172px;height:114px;border-radius:10px;color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-weight:800;font-size:1.05rem;letter-spacing:.02em;line-height:1.15;text-align:center;
+}
+.ph small{font-weight:600;font-size:.76rem;opacity:.92;margin-top:3px;}
+.b-cvpr{background:#1f6feb;}
+.b-neurips{background:#7048e8;}
+.b-iccv{background:#0c8599;}
+.b-mm{background:#e8590c;}
+.b-tmm{background:#495057;}
+.b-arxiv{background:#b02a37;}
+.pub-main{flex:1;min-width:0;}
+.pub-title{font-weight:700;font-size:1.03rem;line-height:1.4;color:var(--ink);display:block;margin-bottom:3px;}
+.pub-authors{font-size:.92rem;color:var(--muted);margin-bottom:5px;}
+.pub-authors .me{color:var(--ink);font-weight:700;}
+.pub-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.88rem;}
+.pub-venue{color:#3a434f;font-weight:500;}
+.pill{
+  font-size:.76rem;font-weight:700;padding:2px 9px;border-radius:999px;
+}
+.pill-star{background:#fff4d6;color:#a9721a;border:1px solid #f0d999;}
+.pill-review{background:#eef1f5;color:#5b6472;border:1px solid #dde2e9;}
+.pub-links{margin-top:6px;font-size:.86rem;font-weight:500;display:flex;gap:14px;flex-wrap:wrap;}
+.pub-links a{display:inline-flex;align-items:center;gap:4px;}
+
+/* ── TIMELINE (exp / edu) ── */
+.tl{position:relative;padding-left:26px;}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line);}
+.tl-item{position:relative;padding-bottom:26px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{
+  content:"";position:absolute;left:-26px;top:6px;width:12px;height:12px;border-radius:50%;
+  background:#fff;border:2.5px solid var(--accent);
+}
+.tl-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.tl-place{font-weight:700;font-size:1.02rem;color:var(--ink);}
+.tl-date{font-size:.85rem;font-weight:600;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums;}
+.tl-role{font-size:.94rem;color:var(--muted);margin-top:2px;}
+.tl-role em{color:var(--accent);font-style:normal;font-weight:600;}
+.tl-topic{font-size:.9rem;color:#4a5462;margin-top:4px;}
+
+/* ── HONORS ── */
+.honor{
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  padding:11px 0;border-bottom:1px solid var(--line);font-size:.97rem;color:#2c3542;
+}
+.honor:last-child{border-bottom:none;}
+.honor-year{font-size:.85rem;font-weight:600;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums;}
+
+/* ── SERVICE ── */
+.svc{display:flex;gap:14px;padding:9px 0;font-size:.97rem;align-items:baseline;}
+.svc-role{flex-shrink:0;width:170px;font-weight:600;color:var(--ink);}
+.svc-body{color:var(--muted);}
+
+/* ── FOOTER ── */
+footer{
+  margin-top:60px;padding:26px 0 10px;border-top:1px solid var(--line);
+  text-align:center;font-size:.84rem;color:var(--faint);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width:680px){
+  .wrap{padding:34px 20px 30px;}
+  .nav-inner{padding:12px 18px;gap:14px;}
+  .nav-name{width:100%;margin-right:0;}
+  .hero{flex-direction:column;text-align:center;gap:22px;}
+  .hero-photo img{width:150px;height:188px;margin:0 auto;}
+  .links{justify-content:center;}
+  .hero-body h1{font-size:2.1rem;}
+  .pub{flex-direction:column;gap:12px;}
+  .pub-thumb{width:100%;flex-direction:row;gap:10px;align-items:center;}
+  .pub-thumb img{width:150px;height:100px;}
+  .ph{width:150px;height:100px;flex-shrink:0;}
+  .svc{flex-direction:column;gap:2px;}
+  .svc-role{width:auto;}
+}
+</style>
 </head>
-
 <body>
-    <p class="title">Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation</p>
-    <div style="text-align: center; font-size: 20pt; margin-bottom: 15px">
-            <span>CVPR 2023</span>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Cong Wan · 万聪</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#honors">Honors</a>
+      <a href="#service">Service</a>
     </div>
-    <p class="author">
-        <span class="author"><a target="_blank" href="https://tnarek.github.io/">Narek
-                Tumanyan</a>&nbsp;<sup>*</sup></span>
-        <span class="author"><a target="_blank" href="https://michalgeyer.my.canva.site/">Michal
-                Geyer&nbsp;</a><sup>*</sup></span>
-        <span class="author"><a target="_blank" href="https://www.weizmann.ac.il/math/bagon/home">Shai
-                Bagon</a>&nbsp;<sup>&nbsp;</sup></span>
-        <span class="author"><a target="_blank" href="https://www.weizmann.ac.il/math/dekel/">Tali
-                Dekel</a>&nbsp;<sup>&nbsp;</sup></span>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <header class="hero">
+    <div class="hero-photo">
+      <img src="images/humanwc.jpg" alt="Cong Wan" />
+    </div>
+    <div class="hero-body">
+      <h1>Cong Wan <span class="zh">(万聪)</span></h1>
+      <p class="hero-tag">M.S. Student · Research Intern @ ByteDance Seed</p>
+      <p class="hero-aff">
+        Ma-Chao Institute of Vision (MIV) Lab,
+        <a href="https://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a><br/>
+        Advised by Prof. <a href="https://scholar.google.com/citations?user=x2xdU7gAAAAJ&hl=en" target="_blank">Yihong Gong</a>
+        &nbsp;·&nbsp; wancong<span aria-hidden="true">&#8203;</span>[at]stu.xjtu.edu.cn
+      </p>
+      <div class="links">
+        <a href="mailto:wancong@stu.xjtu.edu.cn">
+          <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L3.5 6h17L12 11zm0 2L2 6.2V20h20V6.2L12 13z"/></svg>Email
+        </a>
+        <a href="https://scholar.google.com/citations?user=zFi57pEAAAAJ&hl=en" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V17h2V8L12 2zM6 13.2V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.8l-6 3.3-6-3.3z"/></svg>Google Scholar
+        </a>
+        <a href="https://github.com/vancyland" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>GitHub
+        </a>
+        <a href="https://vancyland.github.io/cone.github.io/CV_WC.pdf" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 12h8v1.6H8V12zm0 3.4h8V17H8v-1.6zm0-6.8h4v1.6H8V8.6z"/></svg>CV
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section id="about">
+    <div class="sec-head"><h2>About</h2></div>
+    <div class="about">
+      <p>
+        I am an M.S. student in Computer Science and Technology at
+        <a href="https://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University (XJTU)</a>,
+        advised by Prof. <a href="https://scholar.google.com/citations?user=x2xdU7gAAAAJ&hl=en" target="_blank">Yihong Gong</a>.
+        I received my B.S. in Mathematics from XJTU in 2024.
+        I am currently a Research Intern at <strong>ByteDance Seed</strong> (led by Chang Zhou),
+        working on foundation models and embodied AI. Previously I interned at
+        <strong>Microsoft Research Asia</strong> (world models) and
+        <strong>Alibaba DAMO Academy</strong> (unified visual generation).
+      </p>
+      <p>
+        My research centers on <strong>multimodal foundation models</strong> — spanning model design,
+        large-scale pre-training, data construction, and benchmark evaluation. I am especially interested in
+        advancing the <strong>intelligence</strong> of unified multimodal models, so they can perceive, reason,
+        and act more like genuinely intelligent systems.
+      </p>
+      <div class="interests">
+        <span>Multimodal Foundation Models</span>
+        <span>World Models</span>
+        <span>Embodied AI / VLA</span>
+        <span>Visual Generation</span>
+        <span>Reinforcement Learning</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ NEWS ═══════════ -->
+  <section id="news">
+    <div class="sec-head"><h2>News</h2></div>
+    <div class="news">
+      <div class="news-item"><div class="news-date">Jun 2026</div><div class="news-text"><strong>DataClaw</strong> preprint is on <a href="https://arxiv.org/abs/2606.21337" target="_blank">arXiv</a> — agentic tailoring of multimodal data from raw streams. (<a href="https://czjdsg.github.io/MakeAnyData/" target="_blank">project page</a>)</div></div>
+      <div class="news-item"><div class="news-date">May 2026</div><div class="news-text">Four papers — <strong>DataClaw</strong>, <strong>WorldCanvas</strong>, ProSR, and Retrieve-then-Steer — under review at <strong>NeurIPS 2026</strong>.</div></div>
+      <div class="news-item"><div class="news-date">Feb 2026</div><div class="news-text"><strong>ReMoT</strong> accepted to <strong>CVPR 2026</strong> as a <strong>Highlight</strong> (Top 3.8%).</div></div>
+      <div class="news-item"><div class="news-date">Nov 2025</div><div class="news-text">Started as a Research Intern at <strong>ByteDance Seed</strong>, working on foundation models &amp; embodied AI.</div></div>
+      <div class="news-item"><div class="news-date">Jun 2025</div><div class="news-text">Joined the Machine Learning Group at <strong>Microsoft Research Asia</strong> as a Research Intern (world models).</div></div>
+      <div class="news-item"><div class="news-date">Sep 2024</div><div class="news-text">Started my M.S. at XJTU; <strong>PAP</strong> accepted to <strong>NeurIPS 2024</strong>.</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PUBLICATIONS ═══════════ -->
+  <section id="publications">
+    <div class="sec-head"><h2>Publications</h2></div>
+    <p class="lead" style="margin-bottom:20px;">
+      <span style="color:#a9721a;font-weight:600;">★</span> denotes representative (first-author) work.
+      Full list on <a href="https://scholar.google.com/citations?user=zFi57pEAAAAJ&hl=en" target="_blank">Google Scholar</a>.
     </p>
-    <table border="0" align="center" class="affiliations" width="1200px">
-        <tbody align="center">
-            <tr>
-                <td style="text-align: right; width: 17%"><img src="./sm/assets/wis_logo.jpeg" height="48" alt=""></td>
-                <td style="text-align: left; width:20%; ">&nbsp;<sup>&nbsp;</sup>&nbsp;<a
-                        href="https://www.weizmann.ac.il/pages/">Weizmann Institute of Science</a></td>
-            </tr>
-        </tbody>
-    </table>
 
-    <table width="999" border="0" align="center" class="menu" style="margin-bottom: 8px;">
-        <tbody>
-            <tr>
-                <td align="center">| <a href="#paper">Paper</a> | <a href="./sm/index.html" target="_blank">Supplementary Material</a> | <a href="https://github.com/MichalGeyer/plug-and-play">Code</a> | <a href="https://huggingface.co/spaces/hysts/PnP-diffusion-features"> HuggingFace Demo </a> | <a href="https://replicate.com/daanelson/plug_and_play_image_translation"> Replicate Demo </a> | <a href="https://www.dropbox.com/sh/8giw0uhfekft47h/AAAF1frwakVsQocKczZZSX6La?dl=0">TI2I Benchmarks</a> | </td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="container">
-        <table width="1000" border="0" align="center">
-            <tbody>
-                <tr>
-                    <div id="imageCarousel" class="carousel slide teaser-carousel" data-ride="carousel" data-interval="5000">
-                        <div class="carousel-inner">
-                            <!-- White horse -->
-                            <div class="carousel-item active">
-                                <div>
-                                    <img class="teaser-img" src="./sm/assets/our_results/white_horse/horse.jpg" />
-                                    <span style="font-size: 150%;">→</span>
-                                    <img id="white-horse-result" class="teaser-img" src="./sm/assets/our_results/white_horse/pink_horse.jpg" />
-                                </div>
-                                <br />
-                                <div>
-                                    <div onclick="toggle_prompt('white-horse-pink', ['white-horse-bronze', 'white-horse-robot'], 'white-horse-result')" class="caption caption-active" id="white-horse-pink">"a photo of a pink toy horse on the beach"</div>
-                                    <br />
-                                    <div onclick="toggle_prompt('white-horse-bronze', ['white-horse-pink', 'white-horse-robot'], 'white-horse-result')" class="caption" id="white-horse-bronze">"a photo of a bronze horse in a museum"</div>
-                                    <br />
-                                    <div onclick="toggle_prompt('white-horse-robot', ['white-horse-bronze', 'white-horse-pink'], 'white-horse-result')" class="caption" id="white-horse-robot">"a photo of a robot horse"</div>
-                                </div>
-                            </div>
-
-                            
-                            <!-- Dancing couple -->
-                            <div class="carousel-item">
-                                <div>
-                                    <img class="teaser-img" src="./sm/assets/our_results/dancing_couple/dancing.jpg" />
-                                    <span style="font-size: 150%;">→</span>
-                                    <img id="dancing-result" class="teaser-img" src="./sm/assets/our_results/dancing_couple/robots_dancing.jpg" />
-                                </div>
-                                <br />
-                                <div>
-                                    <div onclick="toggle_prompt('dancing-robots', ['dancing-cartoon', 'dancing-wooden'], 'dancing-result')" class="caption caption-active" id="dancing-robots">"a photo of robots dancing"</div>
-                                    <br />
-                                    <div onclick="toggle_prompt('dancing-cartoon', ['dancing-robots', 'dancing-wooden'], 'dancing-result')" class="caption" id="dancing-cartoon">"a cartoon of a couple dancing"</div>
-                                    <br />
-                                    <div onclick="toggle_prompt('dancing-wooden', ['dancing-cartoon', 'dancing-robots'], 'dancing-result')" class="caption" id="dancing-wooden">"a photo of a wooden sculpture of a couple dancing"</div>
-                                </div>
-                            </div>
-
-                            
-                            <!-- Cat and bunny -->
-                            <div class="carousel-item">
-                                <div>
-                                    <img class="teaser-img" src="./sm/assets/our_results/cat_bunny_painting/cat_bunny_painting.jpg" />
-                                    <span style="font-size: 150%;">→</span>
-                                    <img id="cat-bunny-result" class="teaser-img" src="./sm/assets/our_results/cat_bunny_painting/bears.jpg" />
-                                </div>
-                                <br />
-                                <div>
-                                    <div onclick="toggle_prompt('cat-bunny-bears', ['cat-bunny-polygon'], 'cat-bunny-result')" class="caption caption-active" id="cat-bunny-bears">"a photorealistic image of bear cubs in the snow"</div>
-                                    <br />
-                                    <div onclick="toggle_prompt('cat-bunny-polygon', ['cat-bunny-bears'], 'cat-bunny-result')" class="caption" id="cat-bunny-polygon">"a polygonal illustration of a cat and a bunny"</div>
-                                </div>
-                            </div>
-
-                            
-                            <!-- Fish drawing -->
-                            <div class="carousel-item">
-                                <div>
-                                    <img class="teaser-img" src="./sm/assets/our_results/fish_drawing/fish.jpg" />
-                                    <span style="font-size: 150%;">→</span>
-                                    <img id="fish-drawing-result" class="teaser-img" src="./sm/assets/our_results/fish_drawing/sharks.jpg" />
-                                </div>
-                                <br />
-                                <div>
-                                    <div onclick="toggle_prompt('fish-drawing-sharks', ['fish-drawing-polygon'], 'fish-drawing-result')" class="caption caption-active" id="fish-drawing-sharks">"a photo of sharks in the ocean"</div>
-                                    <br />
-                                    <div onclick="toggle_prompt('fish-drawing-polygon', ['fish-drawing-sharks'], 'fish-drawing-result')" class="caption" id="fish-drawing-polygon">"a polygonal illustration of fish in the ocean"</div>
-                                </div>
-                            </div>
-
-                            
-                            <!-- Stones -->
-                            <div class="carousel-item">
-                                <div>
-                                    <img class="teaser-img" src="./sm/assets/our_results/stones/stones.jpg" />
-                                    <span style="font-size: 150%;">→</span>
-                                    <img id="stones-result" class="teaser-img" src="./sm/assets/our_results/stones/wedding_cake.jpg" />
-                                </div>
-                                <br />
-                                <div>
-                                    <div onclick="toggle_prompt('stones-wedding-cake', ['stones-skyscraper', 'stones-tower'], 'stones-result')" class="caption caption-active" id="stones-wedding-cake">"a photo of a white wedding cake"</div>
-                                    <br />
-                                    <div onclick="toggle_prompt('stones-skyscraper', ['stones-wedding-cake', 'stones-tower'], 'stones-result')" class="caption" id="stones-skyscraper">"a photo of a skyscraper"</div>
-                                    <br />
-                                    <div onclick="toggle_prompt('stones-tower', ['stones-wedding-cake', 'stones-skyscraper'], 'stones-result')" class="caption" id="stones-tower">"a photo of a tower in snow"</div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
-                            <div class="slider-navigation-previous">
-                                <svg viewBox="0 0 50 80" xml:space="preserve">
-                                    <polyline fill="white" stroke-width=".5em" stroke-linecap="round"
-                                        stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 ">
-                                    </polyline>
-                                </svg>
-                            </div>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
-                            <div class="slider-navigation-next">
-                                <svg viewBox="0 0 50 80" xml:space="preserve">
-                                    <polyline fill="white" stroke-width=".5em" stroke-linecap="round"
-                                        stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 ">
-                                    </polyline>
-                                </svg>
-                            </div>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </tr>
-                <tr> <br /> </tr>
-                <tr>
-                    <td style="text-align: left; width: 17%"><i>*Equal contribution.</i></td>
-                </tr>
-                <tr align="center"></tr>
-            </tbody>
-        </table>
-
-        &nbsp;
-
-        <p><span class="section"><b>Abstract</b></span> </p>
-        <p> Large-scale text-to-image generative models have been a revolutionary breakthrough
-            in the evolution of generative AI, allowing us to synthesize diverse images that convey
-            highly complex visual concepts. However, a pivotal challenge in leveraging such models
-            for real-world content creation tasks is providing users with control over the generated
-            content. In this paper, we present a new framework that takes text-to-image synthesis to
-            the realm of image-to-image translation -- given a guidance image and a target text prompt,
-            our method harnesses the power of a pre-trained text-to-image diffusion model to generate a
-            new image that complies with the target text, while preserving the semantic layout of the
-            source image. Specifically, we observe and empirically demonstrate that fine-grained control
-            over the generated structure can be achieved by manipulating spatial features and their
-            self-attention inside the model. This results in a simple and effective approach, where
-            features extracted from the guidance image are directly injected into the generation
-            process of the target image, requiring no training or fine-tuning and applicable for both
-            real or generated guidance images. We demonstrate high-quality results on versatile
-            text-guided image translation tasks, including translating sketches, rough drawings and
-            animations into realistic images, changing of the class and appearance of objects in a given
-            image, and modifications of global qualities such as lighting and color.
-        <p class="section">&nbsp;</p>
-        <p class="section"><b>Additional Results</b></p>
-        <div style="text-align: center">
-            <img src="./sm/assets/results.jpg" alt="" width="850" style="margin: auto" />
+    <!-- DataClaw -->
+    <div class="pub hl">
+      <div class="pub-thumb">
+        <img src="images/pubs/dataclaw.webp" alt="DataClaw demos across six domains" loading="lazy" />
+        <span class="badge b-neurips">NeurIPS<small>2026</small></span>
+      </div>
+      <div class="pub-main">
+        <span class="pub-title">DataClaw: Agentic Tailoring Multimodal Data from Raw Streams</span>
+        <div class="pub-authors"><span class="me">Cong Wan</span>, Zeyu Guo, Zijian Cai, Jiangyang Li, SongLin Dong, Lin Peng, Xiangyang Luo, Zhiheng Ma, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">NeurIPS 2026</span><span class="pill pill-review">Under review</span><span class="pill pill-star">★ Representative</span></div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2606.21337" target="_blank">arXiv</a>
+          <a href="https://czjdsg.github.io/MakeAnyData/" target="_blank">Project</a>
+          <a href="https://github.com/vancyland/DataClaw0" target="_blank">Code</a>
         </div>
-
-        <p class="section">&nbsp;</p>
-        <p class="section"><b>CVPR 2023 Video</b></p>
-        <div style="text-align: center">
-            <iframe width="75%" height="500px" src="https://www.youtube.com/embed/eemzbXXU59E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-
-        <p class="section">&nbsp;</p>
-        <p class="section" id="paper"><b>Paper</b></p>
-        <table width="940" border="0">
-            <tbody>
-                <tr>
-                    <td height="100"><a href="https://arxiv.org/abs/2211.12572" target="_blank" rel="noopener noreferrer"><img
-                                src="./sm/assets/paper_cover.jpeg" alt="" width="140" height="167"></a></td>
-                    <td width="750">
-                        <p><b>Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation</b><br>
-                            Narek Tumanyan <sup>*</sup>, Michal Geyer <sup>*</sup>, Shai Bagon, Tali Dekel.<br />
-                            (* indicates equal contribution) <br>
-                            [<a href="https://arxiv.org/abs/2211.12572" target="_blank"
-                                rel="noopener noreferrer">paper</a>]</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <p class="section">&nbsp;</p>
-        <p class="section" id="sm"><b>Supplementary Material</b></p>
-        <table width="587" height="136" border="0">
-            <tbody>
-                <tr>
-                    <td width="180"><img src="./sm/assets/sm.png" alt="" height="150"></td>
-                    <td align="left">
-                        <p>[<a href="./sm/index.html" target="_blank">supplementary page</a>]</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!--          <p class="section">&nbsp;</p>-->
-        <!--          <p class="section" id="code"><b>Code</b></p>-->
-        <!--          <table border="0">-->
-        <!--            <tbody>-->
-        <!--              <tr>-->
-        <!--                <td width="80"><img src="./pics/github_logo.png" alt="" height="50"></td>-->
-        <!--                <td align="left">-->
-        <!--                  <a href="https://github.com/omerbt/Splice">pytorch code</a>-->
-        <!--                </td>-->
-        <!--              </tr>-->
-        <!--            </tbody>-->
-        <!--          </table>-->
-        <p class="section">&nbsp;</p>
-
-        <p class="section" id="bibtex"><b>Bibtex</b></p>
-        <table border="0">
-            <tbody>
-                <pre style=" display: block;
-  background: #eee;
-  white-space: pre;
-  -webkit-overflow-scrolling: touch;
-  max-width: 100%;
-  min-width: 100px;
-  border-radius: 20px;
-  ">
-
-    @InProceedings{Tumanyan_2023_CVPR,
-        author    = {Tumanyan, Narek and Geyer, Michal and Bagon, Shai and Dekel, Tali},
-        title     = {Plug-and-Play Diffusion Features for Text-Driven Image-to-Image Translation},
-        booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-        month     = {June},
-        year      = {2023},
-        pages     = {1921-1930}
-    }       
-			  </pre>
-
-
-            </tbody>
-        </table>
+      </div>
     </div>
 
+    <!-- WorldCanvas -->
+    <div class="pub hl">
+      <div class="pub-thumb"><div class="ph b-neurips">NeurIPS<small>2026 · Under review</small></div></div>
+      <div class="pub-main">
+        <span class="pub-title">WorldCanvas: Context-Guided Embodied Video Synthesis with a Unified Visual Canvas</span>
+        <div class="pub-authors"><span class="me">Cong Wan</span>, Jingzhou You, SongLin Dong, Kailai Chen, Zhiheng Ma, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">NeurIPS 2026</span><span class="pill pill-review">Under review</span><span class="pill pill-star">★ Representative</span></div>
+      </div>
+    </div>
 
+    <!-- ReMoT -->
+    <div class="pub hl">
+      <div class="pub-thumb">
+        <img src="images/pubs/remot.webp" alt="ReMoT teaser" loading="lazy" />
+        <span class="badge b-cvpr">CVPR<small>2026</small></span>
+      </div>
+      <div class="pub-main">
+        <span class="pub-title">ReMoT: Reinforcement Learning with Motion Contrast Triplets</span>
+        <div class="pub-authors"><span class="me">Cong Wan</span>, Zeyu Guo, Jiangyang Li, SongLin Dong, Yifan Bai, Lin Peng, Zhiheng Ma, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">CVPR 2026</span><span class="pill pill-star">★ Highlight · Top 3.8%</span></div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2603.00461" target="_blank">arXiv</a>
+        </div>
+      </div>
+    </div>
 
+    <!-- ProSR -->
+    <div class="pub">
+      <div class="pub-thumb"><div class="ph b-neurips">NeurIPS<small>2026 · Under review</small></div></div>
+      <div class="pub-main">
+        <span class="pub-title">ProSR: Process-Shaped Spatial Reasoning for Reliable Chain-of-Thought in VLMs</span>
+        <div class="pub-authors">Jiangyang Li, <span class="me">Cong Wan</span>, Changjie Wu, SongLin Dong, Lingjun Zhang, Linzhe Shi, Xu Wang, Zhiheng Ma, Hang Zhang, Mu Xu, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">NeurIPS 2026</span><span class="pill pill-review">Under review</span></div>
+      </div>
+    </div>
+
+    <!-- Retrieve-then-Steer -->
+    <div class="pub">
+      <div class="pub-thumb"><div class="ph b-neurips">NeurIPS<small>2026 · Under review</small></div></div>
+      <div class="pub-main">
+        <span class="pub-title">Retrieve-then-Steer: Online Success Memory for Test-Time Adaptation of Generative VLAs</span>
+        <div class="pub-authors">Jianchao Zhao, Huoren Yang, Yusong Hu, Yuyang Gao, Qiguan Ou, <span class="me">Cong Wan</span>, SongLin Dong, Zhiheng Ma, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">NeurIPS 2026</span><span class="pill pill-review">Under review</span></div>
+      </div>
+    </div>
+
+    <!-- VLN -->
+    <div class="pub">
+      <div class="pub-thumb"><div class="ph b-cvpr">CVPR<small>2026 · Findings</small></div></div>
+      <div class="pub-main">
+        <span class="pub-title">Trajectory-Diversity-Driven Robust Vision-and-Language Navigation</span>
+        <div class="pub-authors">Jiangyang Li, <span class="me">Cong Wan</span>, SongLin Dong, Chenhao Ding, Qiang Wang, Zhiheng Ma, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">CVPR 2026 Findings</span></div>
+      </div>
+    </div>
+
+    <!-- CanonSwap -->
+    <div class="pub">
+      <div class="pub-thumb">
+        <img src="images/pubs/canonswap.webp" alt="CanonSwap teaser" loading="lazy" />
+        <span class="badge b-iccv">ICCV<small>2025</small></span>
+      </div>
+      <div class="pub-main">
+        <span class="pub-title">CanonSwap: High-Fidelity and Consistent Video Face Swapping via Canonical Space Modulation</span>
+        <div class="pub-authors">Xiangyang Luo, Ye Zhu, Yunfei Liu, Lijian Lin, <span class="me">Cong Wan</span>, Zijian Cai, Yu Li, Shao-Lun Huang</div>
+        <div class="pub-meta"><span class="pub-venue">ICCV 2025</span></div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2507.02691" target="_blank">arXiv</a>
+          <a href="https://github.com/Pixel-Talk/CanonSwap" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CIA -->
+    <div class="pub">
+      <div class="pub-thumb"><div class="ph b-mm">ACM MM<small>2025</small></div></div>
+      <div class="pub-main">
+        <span class="pub-title">CIA: Class- and Instance-aware Adaptation for Vision-Language Models</span>
+        <div class="pub-authors">Lin Peng, <span class="me">Cong Wan</span>, Shaokun Wang, Xiang Song, Yuhang He, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">ACM Multimedia (MM) 2025</span></div>
+        <div class="pub-links">
+          <a href="https://dl.acm.org/doi/abs/10.1145/3746027.3754846" target="_blank">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="pub hl">
+      <div class="pub-thumb">
+        <img src="images/pubs/grid.webp" alt="GRID teaser" loading="lazy" />
+        <span class="badge b-arxiv">arXiv<small>2024</small></span>
+      </div>
+      <div class="pub-main">
+        <span class="pub-title">GRID: Omni Visual Generation</span>
+        <div class="pub-authors"><span class="me">Cong Wan</span>, Xiangyang Luo, Hao Luo, Zijian Cai, Yiren Song, Yunlong Zhao, Yifan Bai, Fan Wang, Yuhang He, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">arXiv preprint</span><span class="pill pill-star">★ Representative</span></div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2412.10718" target="_blank">arXiv</a>
+          <a href="https://github.com/Should-AI-Lab/GRID" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAP -->
+    <div class="pub hl">
+      <div class="pub-thumb">
+        <img src="images/pubs/pap.webp" alt="PAP teaser" loading="lazy" />
+        <span class="badge b-neurips">NeurIPS<small>2024</small></span>
+      </div>
+      <div class="pub-main">
+        <span class="pub-title">Prompt-Agnostic Adversarial Perturbation for Customized Diffusion Models</span>
+        <div class="pub-authors"><span class="me">Cong Wan</span>, Yuhang He, Xiang Song, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">NeurIPS 2024</span><span class="pill pill-star">★ Representative</span></div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2408.10571" target="_blank">arXiv</a>
+          <a href="https://github.com/vancyland/Prompt-Agnostic-Adversarial-Perturbation-for-Customized-Diffusion-Models.github.io" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SDA -->
+    <div class="pub">
+      <div class="pub-thumb"><div class="ph b-tmm">IEEE TMM<small>2026</small></div></div>
+      <div class="pub-main">
+        <span class="pub-title">SDA: Structure-aware Distribution Alignment for Vision-Language Models</span>
+        <div class="pub-authors">Lin Peng, <span class="me">Cong Wan</span>, Shaokun Wang, Yuhang He, Yihong Gong</div>
+        <div class="pub-meta"><span class="pub-venue">IEEE Transactions on Multimedia (TMM) 2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EXPERIENCE ═══════════ -->
+  <section id="experience">
+    <div class="sec-head"><h2>Experience</h2></div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-top"><span class="tl-place">ByteDance Seed</span><span class="tl-date">Nov 2025 – Present</span></div>
+        <div class="tl-role">Research Intern · <em>Foundation Model, Embodied AI</em> · Beijing · Led by Chang Zhou</div>
+        <div class="tl-topic">VLM pre-training; unified VLA world model; interleaved image-text reasoning for robot manipulation.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-top"><span class="tl-place">Machine Learning Group, Microsoft Research Asia (MSRA)</span><span class="tl-date">Jun 2025 – Nov 2025</span></div>
+        <div class="tl-role">Research Intern · <em>World Model</em> · Beijing · Led by Li Zhao</div>
+        <div class="tl-topic">Voxel-based world models; dynamic scene consistency.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-top"><span class="tl-place">Alibaba DAMO Academy</span><span class="tl-date">Dec 2024 – Jun 2025</span></div>
+        <div class="tl-role">Research Intern · <em>AIGC, Unified Model</em> · Hangzhou · Led by Hao Luo</div>
+        <div class="tl-topic">Unified visual generation (GRID); large-scale generation/editing dataset construction.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EDUCATION ═══════════ -->
+  <section id="education">
+    <div class="sec-head"><h2>Education</h2></div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-top"><span class="tl-place">Xi'an Jiaotong University</span><span class="tl-date">2024 – 2027</span></div>
+        <div class="tl-role">M.S. in Computer Science and Technology · <em>Advised by Prof. Yihong Gong</em></div>
+        <div class="tl-topic">MIV Lab · Foundation Models, Reinforcement Learning, World Models.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-top"><span class="tl-place">Xi'an Jiaotong University</span><span class="tl-date">2020 – 2024</span></div>
+        <div class="tl-role">B.S. in Mathematics</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ HONORS ═══════════ -->
+  <section id="honors">
+    <div class="sec-head"><h2>Honors &amp; Awards</h2></div>
+    <div class="honor"><span>National Scholarship</span><span class="honor-year">Graduate</span></div>
+    <div class="honor"><span>Special-Class Scholarship, Xi'an Jiaotong University</span><span class="honor-year">—</span></div>
+    <div class="honor"><span>Outstanding Undergraduate</span><span class="honor-year">2024</span></div>
+    <div class="honor"><span>National Postgraduate Mathematical Modeling Competition — Second Prize</span><span class="honor-year">—</span></div>
+    <div class="honor"><span>National Undergraduate Mathematics Competition — Second Prize</span><span class="honor-year">—</span></div>
+    <div class="honor"><span>Mathematical Contest in Modeling (MCM) — Meritorious Winner</span><span class="honor-year">—</span></div>
+    <div class="honor"><span>National High School Mathematics League — Second Prize</span><span class="honor-year">—</span></div>
+  </section>
+
+  <!-- ═══════════ SERVICE ═══════════ -->
+  <section id="service">
+    <div class="sec-head"><h2>Academic Service</h2></div>
+    <div class="svc"><span class="svc-role">Conference Reviewer</span><span class="svc-body">NeurIPS</span></div>
+    <div class="svc"><span class="svc-role">Journal Reviewer</span><span class="svc-body">IEEE Transactions on Multimedia (TMM)</span></div>
+  </section>
+
+  <footer>© Cong Wan (万聪) · Last updated Jul 2026 · Built as a static page hosted on GitHub Pages.</footer>
+
+</div>
 </body>
-
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-WLX2Z5QLG8');
- </script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script type="text/javascript">
-    $(document).ready(function () {
-
-        if (localStorage.getItem("my_app_name_here-quote-scroll") != null) {
-            $(window).scrollTop(localStorage.getItem("my_app_name_here-quote-scroll"));
-        }
-
-        $(window).on("scroll", function() {
-            localStorage.setItem("my_app_name_here-quote-scroll", $(window).scrollTop());
-        });
-
-      });
- </script>
-
- <script>
-    function prompt_on(prompt_element) {
-        prompt_element.classList.add("caption-active");
-    }
-
-    function prompt_off(prompt_element) {
-        prompt_element.classList.remove("caption-active");
-    }
-
-    function toggle_prompt(active_prompt_id, inactive_prompt_ids, result_id) {
-        let active_prompt = document.getElementById(active_prompt_id);
-        prompt_on(active_prompt);
-        for (let i = 0; i < inactive_prompt_ids.length; i++) {
-            let inactive_prompt = document.getElementById(inactive_prompt_ids[i]);
-            prompt_off(inactive_prompt);
-        }
-
-        let result = document.getElementById(result_id);
-        result.src = file_paths[active_prompt_id];
-    }
- </script>
-
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 </html>
