@@ -173,15 +173,15 @@ section{margin-top:52px;scroll-margin-top:80px;}
 .pub-links{margin-top:6px;font-size:.86rem;font-weight:500;display:flex;gap:14px;flex-wrap:wrap;}
 .pub-links a{display:inline-flex;align-items:center;gap:4px;}
 
-/* ── TIMELINE (exp / edu) ── */
-.tl{position:relative;padding-left:26px;}
-.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line);}
-.tl-item{position:relative;padding-bottom:26px;}
-.tl-item:last-child{padding-bottom:0;}
-.tl-item::before{
-  content:"";position:absolute;left:-26px;top:6px;width:12px;height:12px;border-radius:50%;
-  background:#fff;border:2.5px solid var(--accent);
+/* ── EXPERIENCE / EDUCATION (logo rows) ── */
+.tl{display:flex;flex-direction:column;}
+.tl-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);}
+.tl-item:last-child{border-bottom:none;}
+.orglogo{
+  width:50px;height:50px;flex-shrink:0;border-radius:12px;object-fit:contain;
+  background:#fff;border:1px solid var(--line);padding:7px;box-shadow:0 1px 3px rgba(20,32,64,.07);
 }
+.tl-body{flex:1;min-width:0;}
 .tl-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
 .tl-place{font-weight:700;font-size:1.02rem;color:var(--ink);}
 .tl-date{font-size:.85rem;font-weight:600;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums;}
@@ -499,19 +499,28 @@ footer{
     <div class="sec-head"><h2>Experience</h2></div>
     <div class="tl">
       <div class="tl-item">
-        <div class="tl-top"><span class="tl-place">ByteDance Seed</span><span class="tl-date">Nov 2025 – Present</span></div>
-        <div class="tl-role">Research Intern · <em>Foundation Model, Embodied AI</em> · Beijing · Led by Chang Zhou</div>
-        <div class="tl-topic">VLM pre-training; unified VLA world model; interleaved image-text reasoning for robot manipulation.</div>
+        <img class="orglogo" src="images/logos/bytedance.png" alt="ByteDance" loading="lazy" />
+        <div class="tl-body">
+          <div class="tl-top"><span class="tl-place">ByteDance Seed</span><span class="tl-date">Nov 2025 – Present</span></div>
+          <div class="tl-role">Research Intern · <em>Foundation Model, Embodied AI</em> · Beijing · Led by <a href="https://scholar.google.com/citations?hl=en&user=QeSoG3sAAAAJ" target="_blank">Chang Zhou</a></div>
+          <div class="tl-topic">VLM pre-training; unified VLA world model; interleaved image-text reasoning for robot manipulation.</div>
+        </div>
       </div>
       <div class="tl-item">
-        <div class="tl-top"><span class="tl-place">Machine Learning Group, Microsoft Research Asia (MSRA)</span><span class="tl-date">Jun 2025 – Nov 2025</span></div>
-        <div class="tl-role">Research Intern · <em>World Model</em> · Beijing · Led by Li Zhao</div>
-        <div class="tl-topic">Voxel-based world models; dynamic scene consistency.</div>
+        <img class="orglogo" src="images/logos/microsoft.png" alt="Microsoft Research Asia" loading="lazy" />
+        <div class="tl-body">
+          <div class="tl-top"><span class="tl-place">Machine Learning Group, Microsoft Research Asia (MSRA)</span><span class="tl-date">Jun 2025 – Nov 2025</span></div>
+          <div class="tl-role">Research Intern · <em>World Model</em> · Beijing · Led by <a href="https://scholar.google.com/citations?hl=en&user=b-LJkLQAAAAJ" target="_blank">Li Zhao</a></div>
+          <div class="tl-topic">Voxel-based world models; dynamic scene consistency.</div>
+        </div>
       </div>
       <div class="tl-item">
-        <div class="tl-top"><span class="tl-place">Alibaba DAMO Academy</span><span class="tl-date">Dec 2024 – Jun 2025</span></div>
-        <div class="tl-role">Research Intern · <em>AIGC, Unified Model</em> · Hangzhou · Led by Hao Luo</div>
-        <div class="tl-topic">Unified visual generation (GRID); large-scale generation/editing dataset construction.</div>
+        <img class="orglogo" src="images/logos/alibaba.png" alt="Alibaba DAMO Academy" loading="lazy" />
+        <div class="tl-body">
+          <div class="tl-top"><span class="tl-place">Alibaba DAMO Academy</span><span class="tl-date">Dec 2024 – Jun 2025</span></div>
+          <div class="tl-role">Research Intern · <em>AIGC, Unified Model</em> · Hangzhou · Led by <a href="https://scholar.google.com/citations?hl=en&user=7QvWnzMAAAAJ" target="_blank">Hao Luo</a></div>
+          <div class="tl-topic">Unified visual generation (GRID); large-scale generation/editing dataset construction.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -521,13 +530,19 @@ footer{
     <div class="sec-head"><h2>Education</h2></div>
     <div class="tl">
       <div class="tl-item">
-        <div class="tl-top"><span class="tl-place">Xi'an Jiaotong University</span><span class="tl-date">2024 – 2027</span></div>
-        <div class="tl-role">M.S. in Computer Science and Technology · <em>Advised by Prof. Yihong Gong</em></div>
-        <div class="tl-topic">MIV Lab · Foundation Models, Reinforcement Learning, World Models.</div>
+        <img class="orglogo" src="images/logos/xjtu.png" alt="Xi'an Jiaotong University" loading="lazy" />
+        <div class="tl-body">
+          <div class="tl-top"><span class="tl-place">Xi'an Jiaotong University</span><span class="tl-date">2024 – 2027</span></div>
+          <div class="tl-role">M.S. in Computer Science and Technology · <em>Advised by Prof. <a href="https://scholar.google.com/citations?hl=en&user=x2xdU7gAAAAJ" target="_blank">Yihong Gong</a></em></div>
+          <div class="tl-topic">MIV Lab · Foundation Models, Reinforcement Learning, World Models.</div>
+        </div>
       </div>
       <div class="tl-item">
-        <div class="tl-top"><span class="tl-place">Xi'an Jiaotong University</span><span class="tl-date">2020 – 2024</span></div>
-        <div class="tl-role">B.S. in Mathematics</div>
+        <img class="orglogo" src="images/logos/xjtu.png" alt="Xi'an Jiaotong University" loading="lazy" />
+        <div class="tl-body">
+          <div class="tl-top"><span class="tl-place">Xi'an Jiaotong University</span><span class="tl-date">2020 – 2024</span></div>
+          <div class="tl-role">B.S. in Mathematics</div>
+        </div>
       </div>
     </div>
   </section>
